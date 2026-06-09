@@ -305,11 +305,11 @@ footer .fcols > div > a:hover{color:var(--gold)}
   opacity:0;visibility:hidden;transition:.22s;transform-origin:bottom right}
 .acc-panel.open{opacity:1;visibility:visible;transform:none}
 .acc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
-.acc-head h3{font-size:18px;font-weight:800;display:flex;align-items:center;gap:8px}
+.acc-head h3{font-size:18px;font-weight:800;display:flex;align-items:center;gap:8px;color:var(--brand-deep)}
 .acc-head h3 svg{width:22px;height:22px;fill:var(--brand-deep)}
-.acc-x{background:#f1f1f6;border:0;width:34px;height:34px;border-radius:10px;font-size:20px;line-height:1;
-  cursor:pointer;color:var(--ink);display:grid;place-items:center}
-.acc-x:hover{background:var(--grad-soft);color:var(--brand-deep)}
+.acc-x{background:none;border:0;width:34px;height:34px;font-size:22px;line-height:1;
+  cursor:pointer;color:var(--ink-soft);display:grid;place-items:center;transition:.16s}
+.acc-x:hover{color:var(--brand-deep);transform:scale(1.1)}
 .acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
 .acc-opt{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 6px;cursor:pointer;
   display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;transition:.16s;font-family:inherit}

@@ -165,11 +165,29 @@
       '</div>' +
     '</div>';
   document.body.appendChild(b);
-  setTimeout(function () { b.classList.add('show'); }, 600);
+
+  // הרמת כפתור הנגישות והפאנל מעל הבאנר כל עוד הוא מוצג
+  var fab = document.querySelector('.acc-fab');
+  var panel = document.querySelector('.acc-panel');
+  function lift() {
+    var h = b.offsetHeight;
+    if (fab) fab.style.bottom = (h + 18) + 'px';
+    if (panel) panel.style.bottom = (h + 86) + 'px';
+  }
+  function resetPos() {
+    if (fab) fab.style.bottom = '';
+    if (panel) panel.style.bottom = '';
+  }
+  lift();
+  window.addEventListener('resize', lift);
+
+  setTimeout(function () { b.classList.add('show'); lift(); }, 600);
 
   b.querySelector('.cookie-accept').addEventListener('click', function () {
     try { localStorage.setItem(KEY, '1'); } catch (e) {}
     b.classList.remove('show');
+    resetPos();
+    window.removeEventListener('resize', lift);
     setTimeout(function () { if (b.parentNode) b.parentNode.removeChild(b); }, 380);
   });
 })();
