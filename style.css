@@ -202,6 +202,8 @@ section.tight{padding:28px 0}
 .auth-alt a{color:var(--brand-deep);font-weight:700}
 .auth-side{background:#15121a;color:#fff;border-radius:var(--r-lg);padding:36px;position:relative;overflow:hidden;
   display:flex;flex-direction:column;justify-content:center}
+/* הפאנל הכהה בצד ימין (דסקטופ); במובייל הטופס נשאר ראשון */
+@media(min-width:981px){ .auth-side{order:-1} }
 .auth-side::before{content:"";position:absolute;inset:0;background:
   radial-gradient(160px 160px at 90% 10%,rgba(255,179,0,.35),transparent),
   radial-gradient(200px 200px at 5% 95%,rgba(255,94,58,.4),transparent)}
